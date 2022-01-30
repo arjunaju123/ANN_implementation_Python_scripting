@@ -1,0 +1,2 @@
+# ANN_implementation_Python_scripting
+ANN implementation using Python scripting
