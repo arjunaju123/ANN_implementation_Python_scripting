@@ -49,9 +49,9 @@ It will show the list of environments including our current working environment 
 * pip install PyYAML
 
 * python
-  1.from src.utils.common_utils import read_config
-  2.read_config("config.yaml") 
-  3.exit()
+  1. from src.utils.common_utils import read_config
+  2. read_config("config.yaml") 
+  3. exit()
 
 * python src/training.py
 
