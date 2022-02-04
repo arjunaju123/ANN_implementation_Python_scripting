@@ -6,6 +6,12 @@ ANN implementation using Python scripting
 
 [Conda environment commands](https://docs.conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html)
 
+## IMPORTANT LINKS
+
+[5 Reasons To Use YAML Files In Your Machine Learning Projects](https://towardsdatascience.com/5-reasons-to-use-yaml-files-in-your-machine-learning-projects-d4c7b9650f27)
+
+[Command line argument processing using argparse](https://www.youtube.com/watch?v=OxpBMNalsDM)
+
 ### CREATING ENVIRONMENT BY Specifying a location for an environment
 
 You can control where a conda environment lives by providing a path to a target directory when creating the environment. For example, the following command will create a new environment in a subdirectory of the current working directory called envs:
@@ -29,7 +35,6 @@ conda env list
 
 It will show the list of environments including our current working environment with no name as we are now working in current working directory.
 
-
 ### Bash commands used
 
 * mkdir -p src/utils
@@ -49,13 +54,14 @@ It will show the list of environments including our current working environment 
 * pip install PyYAML
 
 * python
+
   1. from src.utils.common_utils import read_config
   2. read_config("config.yaml") 
   3. exit()
 
 * python src/training.py
 
-A module is defined as:
+## A module is defined as:
 
 1. either a Python file that is, a file on disk that ends in .py and contains valid Python (syntax errors, for example, will stop you from being able to import a file)
 

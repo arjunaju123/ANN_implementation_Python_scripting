@@ -12,7 +12,7 @@ from src.utils.common_utils import read_config
 from src.utils.data_management import get_data
 from src.utils.model import create_model
 
-import argparse
+import argparse 
 
 def training(config_path):
     config = read_config(config_path)
@@ -41,6 +41,21 @@ if __name__ == '__main__':
 
     args.add_argument('-c', '--config',default="config.yaml")
 
+    # default– value produced if the arguments are absent from the command line
+
     parsed_args = args.parse_args()
 
-    training(config_path=parsed_args.config)
+    #The benefit of using argparse is that if I have one more another configuration file also and I have to experiment
+    #whether it will work or not, and we donot have to change anything in original configuration file.
+    #We just need pass it as argument in the CLI .
+    #For eg: Suppose if we have one more configuration file
+    #args.add_argument('-s', '--secret',default="secrets.yaml")
+    #in CLI we will pass
+    #python src/training.py -config=config2.yaml -secret=secrets_custom.yaml
+    #OR
+    #python src/training.py -c=config2.yaml -s=secrets_custom.yaml
+    #If I donot pass any arguments. For example:
+    #python src/training.py
+    #default value is taken as argument
+
+    training(config_path=parsed_args.config)# to get the value of config we write parsed_args.config
