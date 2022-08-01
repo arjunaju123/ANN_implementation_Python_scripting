@@ -1,6 +1,8 @@
 import tensorflow as tf
 import time #To create unique file name
 import os #To save the model
+import pandas as pd
+import matplotlib.pyplot as plt
 
 def create_model(LOSS_FUNCTION,OPTIMIZER,METRICS,NUM_CLASSES):
 
@@ -34,4 +36,9 @@ def save_model(model,model_name,model_dir):
 
     # Inside artifacts folder there will be model folder inside which the model will be saved each time with unique model name
 
-
+def save_plot(loss_acc, plots_name,plots_dir_path):
+    unique_filename = get_unique_filename(plots_name)
+    path_to_plot = os.path.join(plots_dir_path, unique_filename)
+    pd.DataFrame(loss_acc).plot(figsize=(10, 7))
+    plt.grid(True)
+    plt.savefig(path_to_plot)
