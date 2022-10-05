@@ -1,5 +1,5 @@
 params:
-  epochs: 5
+  epochs: 1
   batch_size: 32
   no_classes: 10
   input_shape: [28,28]
@@ -7,16 +7,20 @@ params:
   metrices: accuracy
   optimizer: SGD
   validation_datasize: 5000
+  patience:5
+  restore_best_weights:True
 
 artifacts:
   artifacts_dir: artifacts
   model_dir: model
   plots_dir: plots
-  checkpoint_dir: checkpoints
+  CHECKPOINT_DIR: checkpoints
   model_name: model.h5
   plots_name: loss_accuracy.jpg
+  #DATA_DIR not needed here because we are importing mnist dataset directly
+
 
 logs:
   logs_dir: logs_dir
   general_logs: general_logs
-  tensorboard_logs: tensorboard_logs
+  TENSORBOARD_ROOT_LOG_DIR: tensorboard_logs
