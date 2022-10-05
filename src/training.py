@@ -8,10 +8,15 @@
 #If not found it looks through the list of directories(a directory is a folder that contains related modules) defined by sys.path.
 #first string returned by path is always empty this is to indicate the interpreter to check in the current directory.
 
-from src.utils.common_utils import read_config
-from src.utils.data_management import get_data
-from src.utils.model import create_model, save_model ,save_plot
-from src.utils.callbacks import get_callbacks
+# from src.utils.common_utils import read_config
+# from src.utils.data_management import get_data
+# from src.utils.model import create_model, save_model ,save_plot
+# from src.utils.callbacks import get_callbacks
+
+from utils.common_utils import read_config
+from utils.data_management import get_data
+from utils.model import create_model, save_model ,save_plot
+from utils.callbacks import get_callbacks
 
 import os
 import argparse 
@@ -38,7 +43,7 @@ def training(config_path):
 
 
     history = model.fit(X_train, y_train, epochs=EPOCHS,
-                        validation_data=VALIDATION_SET)
+                        validation_data=VALIDATION_SET,callbacks=CALLBACK_LIST)
 
     artifacts_dir = config["artifacts"]["artifacts_dir"]
     model_name = config["artifacts"]["model_name"]
