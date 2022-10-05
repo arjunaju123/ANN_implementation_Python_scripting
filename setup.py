@@ -8,7 +8,7 @@ USERNAME = "arjunaju123"
 
 setuptools.setup(
     name="src", # The name of the package, which is the name that pip will use for your package.
-    version="0.0.1", # The version of your package. This is the version pip will report, and is used for example when you publish your package on PyPI1.
+    version="0.0.2", # The version of your package. This is the version pip will report, and is used for example when you publish your package on PyPI1.
     author=USERNAME,
     author_email="54721arjun@gmail.com",
     description="It's an implementation of ANN",
