@@ -92,3 +92,7 @@ for a directory to become a module, it must contain a special file called __init
 
 3. settings << Project interpreter << Add << Conda environment <<Existing environment << choose interpreter from files (here it is in envs folder inside project folder)
 4. settings << tools << terminal << select shell path as C:\Program Files\Git\bin\bash.exe
+
+### Tensorboard command in terminal
+
+tensorboard --logdir=logs_dir/tensorboard_logs/
