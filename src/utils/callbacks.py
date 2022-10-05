@@ -14,11 +14,11 @@ def get_callbacks(config,X_train):
     logs=config["logs"]
     
     unique_dir_name=get_timestamp("tb_logs")
-    TENSORBOARD_ROOT_LOG_DIR = os.path.join(logs["logs_dir"],logs["TENSORBOARD_ROOT_LOG_DIR"],unique_dir_name)
+    TENSORBOARD_ROOT_LOG_DIR = os.path.join(config["log_dir"],config["TENSORBOARD_ROOT_LOG_DIR"],unique_dir_name)
 
     os.makedirs(TENSORBOARD_ROOT_LOG_DIR,exist_ok=True) # exist_ok => If exists the log directory will be overwritten
 
-    tensorboard_cb= tf.keras.callbacks.TensorBoard(log_dir=TENSORBOARD_ROOT_LOG_DIR)
+    tensorboard_cb= tf.keras.callbacks.TensorBoard(logs_dir=TENSORBOARD_ROOT_LOG_DIR)
 
     file_writer = tf.summary.create_file_writer(logdir=TENSORBOARD_ROOT_LOG_DIR)
 
