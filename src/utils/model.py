@@ -17,7 +17,7 @@ def create_model(LOSS_FUNCTION,OPTIMIZER,METRICS,NUM_CLASSES):
 
     # LOSS_FUNCTION = "sparse_categorical_crossentropy" # use => tf.losses.sparse_categorical_crossentropy
     # OPTIMIZER = "SGD" # or use with custom learning rate=> tf.keras.optimizers.SGD(0.02)
-    # METRICS = ["accuracy"]
+    # METRICS = ["accuracy"] # Metrics should be passed as a list if single and dictionary if multiple.
 
     model_clf.compile(loss=LOSS_FUNCTION,
                 optimizer=OPTIMIZER,
@@ -26,7 +26,7 @@ def create_model(LOSS_FUNCTION,OPTIMIZER,METRICS,NUM_CLASSES):
     return model_clf # =>untrained model
 
 def get_unique_filename(filename):
-    unique_filename=time.strftime(f"%Y%m%d-%H%M%S_{filename}")
+    unique_filename=time.strftime(f"%Y%m%d-%H%M%S_{filename}") #This format of timestamp is creating some issues in linux therefore use asctime instead.
     return unique_filename
 
 def save_model(model,model_name,model_dir):
